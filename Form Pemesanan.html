@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<title>FOOD ORDER FORM</title>
+<link rel="stylesheet" type="text/css" href="formCssFile.css">
+<script type="text/javascript" src="scriptfile.js">  </script> </head>
+<body >  
+<div> 
+<h2 align="center">==========Daftar Menu Indomie==========</h2> 
+<table width="40%" align="center" id="alignment" > 
+<tr>
+  <th>Kode</th>  
+<th>Food Item</th> 
+<th></th>
+<th>Price(Rp.)</th>
+</tr> 
+<tr>
+  <td style="text-align: center">001</td>
+<td>Indomie Goreng</td> 
+<td style="text-align: right"> - </td>
+<td style="text-align: left">6000</td> 
+</tr> 
+<tr>
+  <td style="text-align: center">002</td>
+<td>Indomie Ayam Spesial</td>
+<td style="text-align: right"> - </td> 
+<td style="text-align: left">6000</td> 
+</tr>
+<tr>
+  <td style="text-align: center">003</td> 
+<td>Indomie Kari Ayam</td>
+<td style="text-align: right"> - </td>  
+<td style="text-align: left">6000</td>
+</tr> 
+<tr>
+  <td style="text-align: center">004</td>  
+<td>Indomie Soto Ayam</td>
+<td style="text-align: right"> - </td> 
+<td style="text-align: left">6000</td> 
+</tr>  
+<tr>
+  <td style="text-align: center">005</td>
+<td>Indomie Goreng Rendang</td>
+<td style="text-align: right"> - </td> 
+<td style="text-align: left">17000</td>
+</tr>
+<tr>
+  <td style="text-align: center">006</td>
+<td>Mie Samyang</td>
+<td style="text-align: right"> - </td> 
+<td style="text-align: left">25000</td>
+</tr>
+</table>
+<h2 align="center">==========Topping Indomie==========</h2>
+<table width="40%" align="center" id="alignment2" >
+  <tr>
+    <th>Kode</th>
+    <th>Food Item</th>
+    <th></th>
+    <th>Price(Rp.)</th>
+  </tr>
+  <tr>
+    <td style="text-align: center">007</td>
+    <td>Telur</td>
+    <td style="text-align: right"> - </td>
+    <td style="text-align: left">3000</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">008</td>
+    <td>Tahu Bakso</td>
+    <td style="text-align: right"> - </td>
+    <td style="text-align: left">3500</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">009</td>
+    <td>Kikil Balado</td>
+    <td style="text-align: right"> - </td>
+    <td style="text-align: left">5000</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">010</td>
+    <td>Bakso Sapi Telur Sedang</td>
+    <td style="text-align: right"> - </td>
+    <td style="text-align: left">5000</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">011</td>
+    <td>Keju Parut</td>
+    <td style="text-align: right"> - </td>
+    <td style="text-align: left">4000</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">012</td>
+    <td>Sosis Goreng</td>
+    <td style="text-align: right"> - </td>
+    <td style="text-align: left">5000</td>
+  </tr>
+</table>
+<p><script type="text/javascript">
+		var data_kode_makanan=[];
+		var data_nama_makanan=[];
+		var data_harga=[];
+		var data_jumlah=[];
+		var data_subtotal=[];
+		var i=0;
+
+		function fokus() {
+			document.form_restoran.no_meja.focus();
+		}
+
+		function tampil_no_meja() {
+			document.getElementById('tampil_no_meja').innerHTML=document.form_restoran.no_meja.value;
+		}
+
+		function klik_1(event) {
+			var x=event.which || event.keyCode;
+
+			if(x===13) {
+				document.form_restoran.kode_makanan.focus();
+			}
+		}
+
+		function klik_2() {
+			var kode_makanan=document.form_restoran.kode_makanan.value;
+
+			if(kode_makanan=="001") {
+				document.form_restoran.nama_makanan.value="Indomie Goreng";
+				document.form_restoran.harga.value="6000";
+			} else if(kode_makanan=="002") {
+				document.form_restoran.nama_makanan.value="Indomie Ayam Spesial";
+				document.form_restoran.harga.value="6000";
+			} else if(kode_makanan=="003") {
+				document.form_restoran.nama_makanan.value="Indomie Kari Ayam";
+				document.form_restoran.harga.value="6000";
+			} else if(kode_makanan=="004") {
+				document.form_restoran.nama_makanan.value="Indomie Soto Ayam";
+				document.form_restoran.harga.value="6000";
+			} else if(kode_makanan=="005") {
+				document.form_restoran.nama_makanan.value="Indomie Goreng Rendang";
+				document.form_restoran.harga.value="17000";
+			} else if(kode_makanan=="006") {
+				document.form_restoran.nama_makanan.value="Mie Samyang";
+				document.form_restoran.harga.value="25000";
+			} else if(kode_makanan=="007") {
+				document.form_restoran.nama_makanan.value="Telur";
+				document.form_restoran.harga.value="3000";
+			} else if(kode_makanan=="008") {
+				document.form_restoran.nama_makanan.value="Tahu Bakso";
+				document.form_restoran.harga.value="3500";
+			} else if(kode_makanan=="009") {
+				document.form_restoran.nama_makanan.value="Kikil Balado";
+				document.form_restoran.harga.value="5000";
+			} else if(kode_makanan=="010") {
+				document.form_restoran.nama_makanan.value="Bakso Sapi Telur Sedang";
+				document.form_restoran.harga.value="5000";
+			} else if(kode_makanan=="011") {
+				document.form_restoran.nama_makanan.value="keju Parut";
+				document.form_restoran.harga.value="4000";
+			} else if(kode_makanan=="012") {
+				document.form_restoran.nama_makanan.value="Sosis Goreng";
+				document.form_restoran.harga.value="5000";
+			} else {
+				document.form_restoran.nama_makanan.value="";
+				document.form_restoran.harga.value="";
+			}
+
+			document.form_restoran.jumlah.focus();
+		}
+
+		function klik_3(event) {
+			var x=event.which || event.keyCode;
+
+			if(x===13) {
+				document.form_restoran.save.onclick();
+			}
+		}
+
+		function simpan() {
+			var no_meja=document.form_restoran.no_meja.value;
+			var kode_makanan=document.form_restoran.kode_makanan.value;
+			var jumlah=document.form_restoran.jumlah.value;
+
+			if(no_meja=="" && kode_makanan=="#" && jumlah=="") {
+				alert('Isi Semuanya!');
+				document.form_restoran.no_meja.focus();
+				return false;
+			} else if(no_meja=="" && kode_makanan=="#") {
+				alert('Isi Nomor Meja dan Kode Makanan!');
+				document.form_restoran.no_meja.focus();
+				return false;
+			} else if(no_meja=="" && jumlah=="") {
+				alert('Isi Nomor Meja dan Jumlah Makanan!');
+				document.form_restoran.no_meja.focus();
+				return false;
+			} else if(kode_makanan=="#" && jumlah=="") {
+				alert('Isi Kode Makanan dan Jumlah Makanan');
+				document.form_restoran.jumlah.focus();
+				return false;
+			} else if(no_meja=="") {
+				alert('Isi Nomor Meja!');
+				document.form_restoran.no_meja.focus();
+				return false;
+			} else if(kode_makanan=="#") {
+				alert('Isi Kode Makanan!');
+				document.form_restoran.kode_makanan.focus();
+				return false;
+			} else if(jumlah=="") {
+				alert('Isi Jumlah Makanan');
+				document.form_restoran.jumlah.focus();
+				return false;
+			}
+
+			data_kode_makanan[i]=document.form_restoran.kode_makanan.value;
+			data_nama_makanan[i]=document.form_restoran.nama_makanan.value;
+			data_harga[i]=document.form_restoran.harga.value;
+			data_jumlah[i]=document.form_restoran.jumlah.value;
+			data_subtotal[i]=parseInt(data_harga[i]*data_jumlah[i]);
+
+			document.form_restoran.kode_makanan.value="";
+			document.form_restoran.nama_makanan.value="";
+			document.form_restoran.harga.value="";
+			document.form_restoran.jumlah.value="";
+			data_subtotal[i].value="";
+			i++;
+
+			alert('Data Telah Disimpan!');
+			document.form_restoran.kode_makanan.focus();
+		}
+
+		function tampil() {
+			var isi="";
+			var no=1;
+			var total=0;
+			Total=data_kode_makanan.length;
+
+			for(var i=0; i<Total; i++) {
+				isi=isi + "<tr>" + "<td>" + no++ + "</td>" + "<td>" + data_kode_makanan[i] + "</td>" + "<td>" + data_nama_makanan[i] + "</td>" + "<td>" + "Rp" + data_harga[i] + "</td>" + "<td>" + data_jumlah[i] + "</td>" + "<td>" + "Rp" + data_subtotal[i] + "</td>" + "</tr>";
+				total=total+data_subtotal[i];
+			}
+
+			document.getElementById('tabel_output').innerHTML=isi;
+			document.getElementById('tampil_total_pesan').innerHTML=total;
+			document.form_restoran.kode_makanan.focus();
+		}
+	</script>
+</head>
+<body bgcolor="khaki" onload="fokus()">
+</p>
+<form name="form_restoran">
+		<table width="345" border="4" align="center" cellpadding="6" cellspacing="0">
+			<tr>
+				<td colspan="2" style="text-align: center;"><marquee behavior="alternate" scrollamount="5">
+				<b>Indomie Food - Order Form</b>
+				</marquee></td>
+			</tr>
+			<tr>
+				<td>No Meja :</td>
+				<td><input type="number" name="no_meja" onkeyup="tampil_no_meja()" onclick="tampil_no_meja()" onkeypress="klik_1(event)" required style="width: 100%;"></td>
+			</tr>
+			<tr>
+				<td>Kode Makanan :</td>
+				<td>
+					<select name="kode_makanan" onchange="klik_2()" style="width: 100%;">
+						<option value="#">---- Kode Makanan ----</option>
+					  <option value="001">001</option>
+					  <option value="002">002</option>
+					  <option value="003">003</option>
+						<option value="004">004</option>
+						<option value="005">005</option>
+						<option value="006">006</option>
+						<option value="007">007</option>
+						<option value="008">008</option>
+						<option value="009">009</option>
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="012">012</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Nama Makanan :</td>
+				<td><input type="text" name="nama_makanan" disabled required style="width: 100%;"></td>
+			</tr>
+			<tr>
+				<td>Harga :</td>
+				<td><input type="text" name="harga" disabled style="width: 100%;"></td>
+			</tr>
+			<tr>
+				<td>Jumlah :</td>
+				<td><input type="number" name="jumlah" onkeypress="klik_3(event)" style="width: 100%;"></td>
+			</tr>
+			<tr style="text-align: center;">
+				<td colspan="2">
+					<input type="button" name="save" value="Simpan" onclick="simpan()">
+					<input type="button" name="out" value="Tampilkan" onclick="tampil()">
+					<input type="reset" name="reset" value="Reset" onclick="fokus()">
+				</td>
+			</tr>
+		</table>
+
+		<br><br>
+
+		<table align="center">
+			<tr>
+				<td><h1>No Meja : <span id="tampil_no_meja"></span></h1></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><h1>Total Bayar : Rp<span id="tampil_total_pesan"></span></h1></td>
+			</tr>
+		</table>
+
+		<table cellpadding="10" cellspacing="0" border="4" align="center">
+			<tr>
+				<td colspan="6"><marquee behavior="alternate" scrollamount="7"><b>Data Pesanan</b></marquee></td>
+			</tr>
+			<tr>
+				<td>No.</td>
+				<td>Kode Makanan</td>
+				<td>Nama Makanan</td>
+				<td>Harga</td>
+				<td>Jumlah</td>
+				<td>Subtotal</td>
+			</tr>
+			<tbody id="tabel_output">
+				
+			</tbody>
+		</table>
+</form>
+</body>
+</html>
